@@ -1,22 +1,27 @@
-/* :root {
-  --primary: #00f5ff;
-  --secondary: #7b2cff;
-  --dark: #050505;
-  --card: rgba(255, 255, 255, 0.05);
-  --text: #ffffff;
-
-  --glow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
-} */
-
 :root {
-  --primary: #0ea5e9;
-  --secondary: #9333ea;
-  --accent: #22c55e;
 
-  --bg-dark: #0f172a;
-  --bg-light: #1e293b;
+  /* =================================
+     EXECUTIVE STATESMAN THEME
+  ================================= */
 
-  --text-light: #f1f5f9;
+  --primary: #1e40af;
+  --secondary: #d4af37;
+  --accent: #16a34a;
 
-  --glow: 0 0 15px rgba(14,165,233,0.7);
+  --bg-dark: #0b1120;
+  --bg-light: #172033;
+
+  --text-light: #f8fafc;
+
+  --card-bg: rgba(255,255,255,0.04);
+
+  --border:
+    rgba(255,255,255,0.08);
+
+  --glow:
+    0 0 20px rgba(212,175,55,0.4);
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,0.3);
+
 }

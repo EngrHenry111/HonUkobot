@@ -3,8 +3,8 @@
 ========================================== */
 .education {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
+  margin: 80px auto;
+  padding: 50px 20px;
 }
 
 /* ==========================================
@@ -12,36 +12,62 @@
 ========================================== */
 .education h2 {
   text-align: center;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  color: var(--primary);
+
+  font-size: 2.4rem;
+
+  color: white;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
   margin-bottom: 60px;
 }
 
+.education h2::after {
+  content: "";
+
+  display: block;
+
+  width: 90px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  background: var(--secondary);
+
+  border-radius: 20px;
+}
+
 /* ==========================================
-   TIMELINE CONTAINER
+   TIMELINE
 ========================================== */
 .education-timeline {
   position: relative;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Vertical Timeline Line */
+/* Center Line */
 .education-timeline::before {
   content: "";
 
   position: absolute;
-  left: 120px;
+
+  left: 50%;
   top: 0;
   bottom: 0;
 
-  width: 3px;
+  width: 2px;
 
-  background: linear-gradient(
-    to bottom,
-    var(--primary),
-    var(--secondary)
-  );
+  transform: translateX(-50%);
 
-  border-radius: 20px;
+  background:
+    linear-gradient(
+      to bottom,
+      var(--primary),
+      var(--secondary)
+    );
 }
 
 /* ==========================================
@@ -50,172 +76,173 @@
 .timeline-item {
   position: relative;
 
+  width: 100%;
+
   display: flex;
-  align-items: flex-start;
-  gap: 40px;
+
+  justify-content: flex-start;
 
   margin-bottom: 40px;
 
   opacity: 0;
-  animation: fadeSlide 0.6s ease forwards;
+
+  animation:
+    educationFade .7s ease forwards;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-end;
 }
 
 /* ==========================================
    YEAR BADGE
 ========================================== */
 .timeline-year {
-  min-width: 90px;
-
-  text-align: center;
-
-  padding: 10px 15px;
-
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
-
-  color: white;
-  font-weight: 700;
-
-  border-radius: 30px;
-
-  position: relative;
-  z-index: 2;
-
-  box-shadow:
-    0 0 10px var(--primary),
-    0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Timeline Dot */
-.timeline-year::after {
-  content: "";
-
   position: absolute;
 
-  top: 50%;
-  right: -35px;
+  left: 50%;
+  top: 25px;
 
-  transform: translateY(-50%);
+  transform:
+    translateX(-50%);
 
-  width: 16px;
-  height: 16px;
+  z-index: 10;
+
+  width: 80px;
+  height: 80px;
 
   border-radius: 50%;
 
-  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  color: white;
+
+  font-weight: 700;
 
   box-shadow:
-    0 0 10px var(--primary),
-    0 0 20px var(--primary);
+    0 10px 25px rgba(0,0,0,0.25);
 }
 
 /* ==========================================
-   CONTENT CARD
+   CARD
 ========================================== */
 .timeline-content {
-  flex: 1;
+  width: calc(50% - 70px);
 
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    rgba(255,255,255,0.03);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border:
+    1px solid rgba(255,255,255,0.08);
 
-  border-radius: 16px;
+  border-radius: 18px;
 
-  padding: 24px;
+  padding: 25px;
 
-  backdrop-filter: blur(10px);
+  transition:
+    all .3s ease;
 
-  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
 }
 
 .timeline-content:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--glow);
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.2);
 }
 
 /* ==========================================
    SCHOOL
 ========================================== */
 .timeline-content h3 {
-  margin: 0 0 8px;
+  color: white;
 
-  color: var(--primary);
+  font-size: 1.2rem;
 
-  font-size: 1.25rem;
-  font-weight: 700;
+  margin-bottom: 10px;
+
+  line-height: 1.5;
 }
 
 /* ==========================================
    DEGREE
 ========================================== */
 .timeline-content h4 {
-  margin: 0 0 12px;
-
-  color: var(--text-light);
+  color: var(--secondary);
 
   font-size: 1rem;
+
+  margin-bottom: 15px;
+
   font-weight: 600;
 }
 
 /* ==========================================
-   YEAR RANGE
+   DATE RANGE
 ========================================== */
 .timeline-content p {
   display: inline-block;
 
-  margin: 0;
-
-  padding: 6px 12px;
-
-  background: rgba(255, 255, 255, 0.08);
+  padding: 7px 14px;
 
   border-radius: 30px;
 
-  color: var(--text-light);
+  background:
+    rgba(255,255,255,0.06);
 
-  font-size: 0.9rem;
-  font-weight: 600;
+  color:
+    rgba(255,255,255,0.85);
+
+  font-size: 0.85rem;
+
+  font-weight: 500;
 }
 
 /* ==========================================
-   ANIMATIONS
+   ANIMATION
 ========================================== */
 .timeline-item:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: .1s;
 }
 
 .timeline-item:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: .2s;
 }
 
 .timeline-item:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: .3s;
 }
 
 .timeline-item:nth-child(4) {
-  animation-delay: 0.4s;
+  animation-delay: .4s;
 }
 
 .timeline-item:nth-child(5) {
-  animation-delay: 0.5s;
+  animation-delay: .5s;
 }
 
-.timeline-item:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeSlide {
+@keyframes educationFade {
   from {
     opacity: 0;
-    transform: translateX(-25px);
+    transform:
+      translateY(30px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform:
+      translateY(0);
   }
 }
 
@@ -223,76 +250,75 @@
    TABLET
 ========================================== */
 @media (max-width: 768px) {
+
   .education {
-    padding: 60px 16px;
+    padding: 40px 16px;
   }
 
-  .education-timeline::before {
-    left: 80px;
+  .education h2 {
+    font-size: 1.9rem;
   }
 
-  .timeline-item {
-    gap: 25px;
+  .timeline-content {
+    width: calc(50% - 50px);
   }
 
   .timeline-year {
-    min-width: 70px;
-    font-size: 0.9rem;
-  }
+    width: 65px;
+    height: 65px;
 
-  .timeline-year::after {
-    right: -25px;
+    font-size: 0.85rem;
   }
 }
 
 /* ==========================================
    MOBILE
 ========================================== */
-@media (max-width: 480px) {
-  .education {
-    padding: 50px 14px;
-  }
-
-  .education h2 {
-    font-size: 1.7rem;
-  }
+@media (max-width: 600px) {
 
   .education-timeline::before {
-    display: none;
+    left: 30px;
   }
 
-  .timeline-item {
-    flex-direction: column;
-    gap: 15px;
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    justify-content: flex-start;
   }
 
   .timeline-year {
-    min-width: auto;
-  }
+    left: 30px;
 
-  .timeline-year::after {
-    display: none;
+    width: 55px;
+    height: 55px;
+
+    font-size: 0.75rem;
   }
 
   .timeline-content {
     width: 100%;
+
+    margin-left: 80px;
+  }
+
+  .education h2 {
+    font-size: 1.5rem;
   }
 
   .timeline-content h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .timeline-content h4 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .timeline-content p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
 /* ==========================================
-   OVERFLOW PROTECTION
+   SAFETY
 ========================================== */
 .education,
 .education * {

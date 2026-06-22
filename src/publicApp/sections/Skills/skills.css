@@ -2,181 +2,232 @@
    SKILLS SECTION
 ========================================== */
 .skills {
-  padding: 80px 20px;
-}
-
-.skills .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 50px 20px;
 }
 
 /* ==========================================
-   SECTION TITLE
+   TITLE
 ========================================== */
 .section-title {
   text-align: center;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  margin-bottom: 50px;
-  color: var(--primary);
+
+  font-size: 2.4rem;
+
+  color: white;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 60px;
+}
+
+.section-title::after {
+  content: "";
+
+  display: block;
+
+  width: 90px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  background: var(--secondary);
+
+  border-radius: 30px;
 }
 
 /* ==========================================
-   SKILL ITEM
+   SKILL CARD
 ========================================== */
 .skill-item {
-  margin-bottom: 30px;
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  margin-bottom: 25px;
+
+  backdrop-filter: blur(15px);
+
+  transition:
+    all .3s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* Top Accent */
+.skill-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary)
+    );
+}
+
+.skill-item:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.2);
 }
 
 /* ==========================================
-   SKILL HEADER
+   HEADER
 ========================================== */
 .skill-header {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .skill-header span:first-child {
+  color: white;
+
   font-size: 1rem;
+
   font-weight: 600;
-  color: var(--text-light);
 }
 
 .skill-header span:last-child {
-  font-size: 0.95rem;
+  color: var(--secondary);
+
   font-weight: 700;
-  color: var(--primary);
+
+  font-size: 0.95rem;
 }
 
 /* ==========================================
-   PROGRESS BAR
+   BAR
 ========================================== */
 .skill-bar {
   width: 100%;
   height: 14px;
 
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50px;
+  background:
+    rgba(255,255,255,0.06);
+
+  border-radius: 30px;
 
   overflow: hidden;
-  position: relative;
 }
 
 /* ==========================================
-   PROGRESS FILL
+   PROGRESS
 ========================================== */
 .skill-progress {
   height: 100%;
-  width: var(--progress);
 
-  border-radius: 50px;
+  border-radius: 30px;
 
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary),
-    var(--primary)
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary)
+    );
 
-  background-size: 200% 100%;
+  position: relative;
 
   animation:
-    progressGlow 3s linear infinite,
-    fillBar 1.5s ease forwards;
-
-  transform-origin: left;
+    skillFill 1.8s ease forwards;
 }
 
-@keyframes fillBar {
+/* Shine Effect */
+.skill-progress::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 50%;
+  height: 100%;
+
+  background:
+    rgba(255,255,255,0.35);
+
+  transform:
+    skewX(-25deg);
+
+  animation:
+    shine 3s infinite;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+@keyframes skillFill {
   from {
     width: 0;
   }
-
-  to {
-    width: var(--progress);
-  }
 }
-/* ==========================================
-   ANIMATIONS
-========================================== */
-@keyframes progressGlow {
+
+@keyframes shine {
   0% {
-    background-position: 0% 50%;
+    left: -100%;
   }
 
   100% {
-    background-position: 200% 50%;
-  }
-}
-
-@keyframes progressLoad {
-  from {
-    opacity: 0.6;
-  }
-
-  to {
-    opacity: 1;
+    left: 150%;
   }
 }
 
 /* ==========================================
-   HOVER EFFECT
-========================================== */
-.skill-item:hover .skill-progress {
-  box-shadow:
-    0 0 10px var(--primary),
-    0 0 20px var(--primary),
-    0 0 35px var(--secondary),
-    0 0 50px var(--secondary);
-}
-
-/* ==========================================
-   GLASS CARD EFFECT
-========================================== */
-.skill-item {
-  padding: 20px;
-
-  background: rgba(255, 255, 255, 0.03);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 15px;
-
-  backdrop-filter: blur(10px);
-
-  transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(255, 255, 255, 0.15);
-
-  box-shadow: var(--glow);
-}
-
-/* ==========================================
-   RESPONSIVE
+   TABLET
 ========================================== */
 @media (max-width: 768px) {
+
   .skills {
-    padding: 60px 16px;
+    padding: 40px 16px;
   }
 
   .section-title {
-    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  .skill-item {
+    padding: 18px;
   }
 }
 
+/* ==========================================
+   MOBILE
+========================================== */
 @media (max-width: 480px) {
+
   .skills {
-    padding: 50px 14px;
+    padding: 40px 14px;
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .skill-header span:first-child {

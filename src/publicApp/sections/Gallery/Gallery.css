@@ -2,52 +2,89 @@
    GALLERY SECTION
 ========================================== */
 .gallery {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 50px 20px;
 }
 
+/* ==========================================
+   TITLE
+========================================== */
 .gallery h2 {
   text-align: center;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  color: var(--primary);
+
+  font-size: 2.4rem;
+
+  color: white;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
   margin-bottom: 60px;
 }
 
+.gallery h2::after {
+  content: "";
+
+  display: block;
+
+  width: 90px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  border-radius: 30px;
+
+  background: var(--secondary);
+}
+
 /* ==========================================
-   EVENTS GRID
+   GRID
 ========================================== */
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(350px, 1fr)
-  );
-  gap: 25px;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(340px, 1fr)
+    );
+
+  gap: 30px;
 }
 
 /* ==========================================
-   EVENT CARD
+   CARD
 ========================================== */
 .event-card {
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    rgba(255,255,255,0.03);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border:
+    1px solid rgba(255,255,255,0.08);
 
-  border-radius: 20px;
+  border-radius: 22px;
+
   overflow: hidden;
 
-  backdrop-filter: blur(10px);
+  transition:
+    all .35s ease;
 
-  transition: all 0.35s ease;
+  backdrop-filter: blur(15px);
 
   opacity: 0;
-  animation: cardFade 0.8s ease forwards;
+
+  animation:
+    galleryFade .8s ease forwards;
 }
 
 .event-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--glow);
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 20px 35px rgba(0,0,0,0.25);
 }
 
 /* ==========================================
@@ -55,9 +92,14 @@
 ========================================== */
 .event-image {
   width: 100%;
-  aspect-ratio: 8 / 9;
-  /* object-fit: cover; */
+  height: 280px;
+
+  object-fit: cover;
+
   display: block;
+
+  transition:
+    transform .5s ease;
 }
 
 .event-card:hover .event-image {
@@ -68,38 +110,31 @@
    CONTENT
 ========================================== */
 .event-content {
-  flex: 1;
-}
-
-
-.event-description {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden;
+  padding: 25px;
 }
 
 /* ==========================================
-   CATEGORY BADGE
+   BADGE
 ========================================== */
 .badge {
   display: inline-block;
 
-  padding: 7px 14px;
+  padding: 7px 16px;
 
   border-radius: 30px;
 
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
+  background:
+    rgba(212,175,55,0.12);
 
-  color: white;
+  border:
+    1px solid rgba(212,175,55,0.25);
+
+  color:
+    var(--secondary);
 
   font-size: 0.8rem;
-  font-weight: 700;
+
+  font-weight: 600;
 
   margin-bottom: 15px;
 }
@@ -108,98 +143,126 @@
    TITLE
 ========================================== */
 .event-content h3 {
+  color: white;
+
+  font-size: 1.25rem;
+
+  line-height: 1.5;
+
   margin-bottom: 15px;
-
-  color: var(--primary);
-
-  font-size: 1.3rem;
-  line-height: 1.4;
 }
 
 /* ==========================================
    DATE
 ========================================== */
 .event-date {
-  display: inline-flex;
-  align-items: center;
+  color: var(--secondary);
 
-  padding: 6px 12px;
+  font-size: 0.9rem;
 
-  background: rgba(255,255,255,0.08);
-
-  border-radius: 30px;
-
-  font-size: 0.85rem;
   font-weight: 600;
 
-  color: var(--primary);
-
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* ==========================================
    LOCATION
 ========================================== */
 .event-location {
-  font-weight: 600;
+  color: var(--primary);
+
+  font-size: 0.9rem;
+
   margin-bottom: 15px;
 
-  color: var(--text-light);
+  font-weight: 600;
 }
 
 /* ==========================================
    DESCRIPTION
 ========================================== */
 .event-description {
-  line-height: 1.8;
-  color: var(--text-light);
+  color:
+    rgba(255,255,255,0.82);
 
-  opacity: 0.9;
+  line-height: 1.8;
+
+  font-size: 0.95rem;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 4;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
 }
 
 /* ==========================================
-   CARD ENTRY ANIMATION
+   TOP BORDER ACCENT
 ========================================== */
-@keyframes cardFade {
+.event-card::before {
+  content: "";
+
+  display: block;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary)
+    );
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+@keyframes galleryFade {
+
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform:
+      translateY(30px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 }
 
 .event-card:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: .1s;
 }
 
 .event-card:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: .2s;
 }
 
 .event-card:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: .3s;
 }
 
 .event-card:nth-child(4) {
-  animation-delay: 0.4s;
+  animation-delay: .4s;
 }
 
 .event-card:nth-child(5) {
-  animation-delay: 0.5s;
+  animation-delay: .5s;
 }
 
 .event-card:nth-child(6) {
-  animation-delay: 0.6s;
+  animation-delay: .6s;
 }
 
 /* ==========================================
-   FEATURED FIRST CARD
+   FEATURED FIRST ITEM
 ========================================== */
-/* .event-card:first-child {
+.event-card:first-child {
   grid-column: span 2;
 }
 
@@ -209,12 +272,13 @@
 
 .event-card:first-child h3 {
   font-size: 1.6rem;
-} */
+}
 
 /* ==========================================
    TABLET
 ========================================== */
 @media (max-width: 900px) {
+
   .events-grid {
     grid-template-columns: 1fr;
   }
@@ -226,18 +290,23 @@
   .event-card:first-child .event-image {
     height: 280px;
   }
+
+  .gallery h2 {
+    font-size: 2rem;
+  }
 }
 
 /* ==========================================
    MOBILE
 ========================================== */
 @media (max-width: 480px) {
+
   .gallery {
-    padding: 50px 14px;
+    padding: 40px 14px;
   }
 
   .gallery h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .event-image {
@@ -249,7 +318,7 @@
   }
 
   .event-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .event-description {
@@ -258,7 +327,7 @@
 }
 
 /* ==========================================
-   OVERFLOW PROTECTION
+   SAFETY
 ========================================== */
 .gallery,
 .gallery * {

@@ -1,172 +1,589 @@
-/* ===============================
+/* ==========================================
    LEADERSHIP SECTION
-================================= */
+========================================== */
 .leadership {
-  position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
-
-  overflow: hidden;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 50px 20px;
 }
 
-/* Title */
+/* ==========================================
+   TITLE
+========================================== */
 .leadership h2 {
   text-align: center;
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  margin-bottom: 50px;
+
+  font-size: 2.4rem;
+
+  color: white;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 70px;
 }
 
-/* ===============================
-   TIMELINE BASE
-================================= */
+.leadership h2::after {
+  content: "";
+
+  display: block;
+
+  width: 90px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  background: var(--secondary);
+
+  border-radius: 30px;
+}
+
+/* ==========================================
+   TIMELINE
+========================================== */
 .timeline {
   position: relative;
 }
 
-/* Center line */
+/* Center Line */
 .timeline::before {
   content: "";
+
   position: absolute;
+
   top: 0;
+  bottom: 0;
   left: 50%;
+
   transform: translateX(-50%);
 
-  width: 2px;
-  height: 100%;
+  width: 3px;
 
-  background: rgba(255,255,255,0.1);
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+  );
 }
 
-/* ===============================
+/* ==========================================
    TIMELINE ITEM
-================================= */
+========================================== */
 .timeline-item {
   position: relative;
+
   width: 50%;
-  padding: 20px 30px;
+
+  padding: 0 40px 40px;
+
+  box-sizing: border-box;
 }
 
-/* LEFT SIDE */
+/* LEFT */
 .timeline-item.left {
   left: 0;
-  text-align: right;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 .timeline-item.right {
   left: 50%;
 }
 
-/* ===============================
-   DOT (NODE)
-================================= */
+/* ==========================================
+   DOT
+========================================== */
 .timeline-item::before {
   content: "";
-  position: absolute;
-  top: 25px;
-  right: -8px;
 
-  width: 14px;
-  height: 14px;
+  position: absolute;
+
+  top: 25px;
+  width: 22px;
+  height: 22px;
+
   border-radius: 50%;
 
-  background: var(--primary);
-  box-shadow: 0 0 10px var(--primary);
-  z-index: 2;
+  background: var(--secondary);
+
+  border: 4px solid #0f172a;
+
+  box-shadow:
+    0 0 0 4px rgba(212,175,55,0.15);
 }
 
-/* Fix for right side dot */
+/* LEFT DOT */
+.timeline-item.left::before {
+  right: -11px;
+}
+
+/* RIGHT DOT */
 .timeline-item.right::before {
-  left: -8px;
-  right: auto;
+  left: -11px;
 }
 
-/* ===============================
+/* ==========================================
    CONTENT CARD
-================================= */
+========================================== */
 .timeline-content {
-  padding: 20px;
-  border-radius: 14px;
+  background:
+    rgba(255,255,255,0.03);
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  backdrop-filter: blur(15px);
+
+  transition: all .3s ease;
+
+  position: relative;
 }
 
-/* Hover */
+/* Executive Accent */
+.timeline-content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  border-radius: 20px 20px 0 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
 .timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--glow);
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.25);
 }
 
-/* Text */
+/* ==========================================
+   POSITION TITLE
+========================================== */
 .timeline-content h3 {
-  color: var(--primary);
-  margin-bottom: 8px;
+  color: white;
+
+  font-size: 1.2rem;
+
+  margin-bottom: 15px;
+
+  line-height: 1.5;
 }
 
-.timeline-content p {
-  font-size: 0.9rem;
-  line-height: 1.6;
+/* ==========================================
+   YEAR BADGE
+========================================== */
+.timeline-content p:first-of-type {
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  margin-bottom: 15px;
+
+  background:
+    rgba(212,175,55,0.12);
+
+  border:
+    1px solid rgba(212,175,55,0.2);
+
+  color:
+    var(--secondary);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
 }
 
-/* ===============================
-   RESPONSIVE FIX (IMPORTANT)
-================================= */
+/* ==========================================
+   DESCRIPTION
+========================================== */
+.timeline-content p:last-of-type {
+  color:
+    rgba(255,255,255,0.82);
 
-/* Tablet & Mobile */
-@media (max-width: 768px) {
+  line-height: 1.9;
+
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+@media (max-width: 900px) {
+
   .timeline::before {
-    left: 10px;
+    left: 30px;
   }
 
-  .timeline-item {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 10px;
-
-    text-align: left !important;
-  }
-
+  .timeline-item,
   .timeline-item.left,
   .timeline-item.right {
+    width: 100%;
     left: 0;
+
+    padding-left: 75px;
+    padding-right: 0;
   }
 
-  /* Move dot to left */
   .timeline-item::before {
-    left: 2px;
+    left: 19px;
+  }
+
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 19px;
     right: auto;
   }
 }
 
-/* Mobile */
+/* ==========================================
+   MOBILE
+========================================== */
 @media (max-width: 480px) {
+
   .leadership {
-    padding: 60px 14px;
+    padding: 40px 14px;
+  }
+
+  .leadership h2 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-item {
+    padding-left: 65px;
   }
 
   .timeline-content {
-    padding: 16px;
+    padding: 18px;
   }
 
   .timeline-content h3 {
     font-size: 1rem;
   }
 
-  .timeline-content p {
-    font-size: 0.85rem;
+  .timeline-content p:last-of-type {
+    font-size: 0.9rem;
   }
 }
 
-/* ===============================
-   OVERFLOW PROTECTION
-================================= */
+/* ==========================================
+   SAFETY
+========================================== */
 .leadership,
+.leadership *,
 .timeline,
 .timeline-item {
+  box-sizing: border-box;
   max-width: 100%;
+  word-break: break-word;
+}/* ==========================================
+   LEADERSHIP SECTION
+========================================== */
+.leadership {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 50px 20px;
 }
 
+/* ==========================================
+   TITLE
+========================================== */
+.leadership h2 {
+  text-align: center;
+
+  font-size: 2.4rem;
+
+  color: white;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 70px;
+}
+
+.leadership h2::after {
+  content: "";
+
+  display: block;
+
+  width: 90px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  background: var(--secondary);
+
+  border-radius: 30px;
+}
+
+/* ==========================================
+   TIMELINE
+========================================== */
+.timeline {
+  position: relative;
+}
+
+/* Center Line */
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+/* ==========================================
+   TIMELINE ITEM
+========================================== */
+.timeline-item {
+  position: relative;
+
+  width: 50%;
+
+  padding: 0 40px 40px;
+
+  box-sizing: border-box;
+}
+
+/* LEFT */
+.timeline-item.left {
+  left: 0;
+}
+
+/* RIGHT */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* ==========================================
+   DOT
+========================================== */
+.timeline-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 25px;
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: var(--secondary);
+
+  border: 4px solid #0f172a;
+
+  box-shadow:
+    0 0 0 4px rgba(212,175,55,0.15);
+}
+
+/* LEFT DOT */
+.timeline-item.left::before {
+  right: -11px;
+}
+
+/* RIGHT DOT */
+.timeline-item.right::before {
+  left: -11px;
+}
+
+/* ==========================================
+   CONTENT CARD
+========================================== */
 .timeline-content {
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  backdrop-filter: blur(15px);
+
+  transition: all .3s ease;
+
+  position: relative;
+}
+
+/* Executive Accent */
+.timeline-content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  border-radius: 20px 20px 0 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* ==========================================
+   POSITION TITLE
+========================================== */
+.timeline-content h3 {
+  color: white;
+
+  font-size: 1.2rem;
+
+  margin-bottom: 15px;
+
+  line-height: 1.5;
+}
+
+/* ==========================================
+   YEAR BADGE
+========================================== */
+.timeline-content p:first-of-type {
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  margin-bottom: 15px;
+
+  background:
+    rgba(212,175,55,0.12);
+
+  border:
+    1px solid rgba(212,175,55,0.2);
+
+  color:
+    var(--secondary);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+.timeline-content p:last-of-type {
+  color:
+    rgba(255,255,255,0.82);
+
+  line-height: 1.9;
+
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+@media (max-width: 900px) {
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+
+    padding-left: 75px;
+    padding-right: 0;
+  }
+
+  .timeline-item::before {
+    left: 19px;
+  }
+
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 19px;
+    right: auto;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+@media (max-width: 480px) {
+
+  .leadership {
+    padding: 40px 14px;
+  }
+
+  .leadership h2 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-item {
+    padding-left: 65px;
+  }
+
+  .timeline-content {
+    padding: 18px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-content p:last-of-type {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+.leadership,
+.leadership *,
+.timeline,
+.timeline-item {
+  box-sizing: border-box;
+  max-width: 100%;
   word-break: break-word;
 }
