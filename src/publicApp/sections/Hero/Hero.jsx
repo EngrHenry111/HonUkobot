@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import API from "../../../services/api";
 import Particles from "react-tsparticles";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import "./Hero.css";
 
 const titles = [
@@ -77,12 +77,11 @@ const Hero = () => {
 
         {/* IMAGE */}
         <Tilt
-          options={{
-            max: 10,
-            scale: 1.02,
-            speed: 1000,
-          }}
-        >
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
+            scale={1.02}
+            transitionSpeed={1000}
+          >
           <motion.div
             className="hero-image-wrapper"
             initial={{
