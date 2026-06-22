@@ -1,0 +1,172 @@
+/* ===============================
+   LEADERSHIP SECTION
+================================= */
+.leadership {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+
+  overflow: hidden;
+}
+
+/* Title */
+.leadership h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  margin-bottom: 50px;
+}
+
+/* ===============================
+   TIMELINE BASE
+================================= */
+.timeline {
+  position: relative;
+}
+
+/* Center line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 2px;
+  height: 100%;
+
+  background: rgba(255,255,255,0.1);
+}
+
+/* ===============================
+   TIMELINE ITEM
+================================= */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 30px;
+}
+
+/* LEFT SIDE */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+/* RIGHT SIDE */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* ===============================
+   DOT (NODE)
+================================= */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: -8px;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  z-index: 2;
+}
+
+/* Fix for right side dot */
+.timeline-item.right::before {
+  left: -8px;
+  right: auto;
+}
+
+/* ===============================
+   CONTENT CARD
+================================= */
+.timeline-content {
+  padding: 20px;
+  border-radius: 14px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow);
+}
+
+/* Text */
+.timeline-content h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   RESPONSIVE FIX (IMPORTANT)
+================================= */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 10px;
+
+    text-align: left !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  /* Move dot to left */
+  .timeline-item::before {
+    left: 2px;
+    right: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .leadership {
+    padding: 60px 14px;
+  }
+
+  .timeline-content {
+    padding: 16px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.leadership,
+.timeline,
+.timeline-item {
+  max-width: 100%;
+}
+
+.timeline-content {
+  word-break: break-word;
+}

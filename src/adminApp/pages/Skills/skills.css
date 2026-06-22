@@ -1,0 +1,268 @@
+/* ==========================================
+   ADMIN SKILLS PAGE
+========================================== */
+.admin-skills {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+.admin-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.admin-header p {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   FORM CONTAINER
+========================================== */
+.skill-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+
+  backdrop-filter: blur(10px);
+}
+
+.skill-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.skill-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.skill-form button {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.skill-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   SKILLS LIST
+========================================== */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ==========================================
+   SKILL CARD
+========================================== */
+.skill-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+  padding: 20px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   SKILL INFO
+========================================== */
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.skill-info h4 {
+  color: var(--primary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.skill-info span {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 30px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  transition: width 0.6s ease;
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #0ea5e9;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #0284c7;
+  transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: crimson;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: red;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px red;
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+.skills-list p {
+  text-align: center;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+
+  color: var(--text-light);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width: 768px) {
+  .admin-skills {
+    padding: 30px 16px;
+  }
+
+  .skill-form {
+    padding: 20px;
+  }
+
+  .admin-header h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-skills {
+    padding: 20px 12px;
+  }
+
+  .admin-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .skill-form input {
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================
+   OVERFLOW PROTECTION
+========================================== */
+.admin-skills,
+.admin-skills * {
+  max-width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}

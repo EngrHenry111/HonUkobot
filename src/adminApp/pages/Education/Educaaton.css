@@ -1,0 +1,261 @@
+/* ==========================================
+   ADMIN EDUCATION PAGE
+========================================== */
+.admin-education {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+.admin-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.admin-header p {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   EDUCATION FORM
+========================================== */
+.education-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 35px;
+
+  backdrop-filter: blur(10px);
+}
+
+.education-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.education-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.education-form button {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.education-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   EDUCATION LIST
+========================================== */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================
+   EDUCATION CARD
+========================================== */
+.education-card {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+  padding: 22px;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   SCHOOL NAME
+========================================== */
+.education-card h3 {
+  margin: 0 0 8px;
+
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ==========================================
+   DEGREE
+========================================== */
+.education-card h4 {
+  margin: 0 0 10px;
+
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   YEAR RANGE
+========================================== */
+.education-card p {
+  display: inline-block;
+
+  margin-bottom: 20px;
+  padding: 6px 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 30px;
+
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+   EDIT BUTTON
+========================================== */
+.edit-btn {
+  background: #0ea5e9;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #0284c7;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   DELETE BUTTON
+========================================== */
+.delete-btn {
+  background: crimson;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: red;
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 12px red;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width: 768px) {
+  .admin-education {
+    padding: 30px 16px;
+  }
+
+  .education-form {
+    padding: 20px;
+  }
+
+  .admin-header h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-education {
+    padding: 20px 12px;
+  }
+
+  .admin-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .education-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .education-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .education-form input {
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================
+   OVERFLOW PROTECTION
+========================================== */
+.admin-education,
+.admin-education * {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-wrap: break-word;
+}

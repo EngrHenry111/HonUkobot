@@ -1,0 +1,326 @@
+/* ==========================================
+   PROFILE MANAGEMENT
+========================================== */
+.admin-profile {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 35px;
+
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+.admin-profile h2 {
+  text-align: center;
+
+  font-size: 2rem;
+
+  color: var(--secondary);
+
+  margin-bottom: 30px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   FORM AREA
+========================================== */
+.admin-profile input,
+.admin-profile textarea {
+
+  width: 100%;
+
+  padding: 14px 18px;
+
+  margin-bottom: 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  color: var(--text-light);
+
+  font-size: 0.95rem;
+
+  transition: all 0.3s ease;
+}
+
+.admin-profile textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
+.admin-profile input:focus,
+.admin-profile textarea:focus {
+
+  outline: none;
+
+  border-color: var(--secondary);
+
+  box-shadow:
+    0 0 15px rgba(212,175,55,0.25);
+}
+
+/* ==========================================
+   FILE INPUT
+========================================== */
+.admin-profile input[type="file"] {
+
+  padding: 14px;
+
+  border: 2px dashed
+    rgba(212,175,55,0.3);
+
+  cursor: pointer;
+}
+
+/* ==========================================
+   CREATE BUTTON
+========================================== */
+.admin-profile > button {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.admin-profile > button:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    var(--glow);
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+.admin-profile hr {
+
+  margin: 35px 0;
+
+  border: none;
+
+  height: 1px;
+
+  background:
+    rgba(255,255,255,0.08);
+}
+
+/* ==========================================
+   PROFILE CARD
+========================================== */
+.admin-profile > div {
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-left:
+    4px solid var(--secondary);
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  transition: all 0.3s ease;
+}
+
+.admin-profile > div:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ==========================================
+   NAME
+========================================== */
+.admin-profile h3 {
+
+  color: white;
+
+  font-size: 1.25rem;
+
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+   POSITION
+========================================== */
+.admin-profile p {
+
+  color:
+    rgba(255,255,255,0.75);
+
+  margin-bottom: 15px;
+
+  line-height: 1.6;
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+.admin-profile > div button {
+
+  border: none;
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+/* Edit */
+.admin-profile > div button:first-of-type {
+
+  background:
+    rgba(30,64,175,0.15);
+
+  color:
+    var(--primary);
+
+  margin-right: 10px;
+}
+
+.admin-profile > div button:first-of-type:hover {
+
+  background:
+    var(--primary);
+
+  color: white;
+}
+
+/* Delete */
+.admin-profile > div button:last-of-type {
+
+  background:
+    rgba(220,20,60,0.15);
+
+  color: crimson;
+}
+
+.admin-profile > div button:last-of-type:hover {
+
+  background: crimson;
+
+  color: white;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+@media (max-width: 768px) {
+
+  .admin-profile {
+
+    padding: 25px;
+  }
+
+  .admin-profile h2 {
+
+    font-size: 1.6rem;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+@media (max-width: 480px) {
+
+  .admin-profile {
+
+    padding: 18px;
+  }
+
+  .admin-profile h2 {
+
+    font-size: 1.4rem;
+  }
+
+  .admin-profile input,
+  .admin-profile textarea {
+
+    font-size: 0.9rem;
+  }
+
+  .admin-profile > div {
+
+    padding: 16px;
+  }
+
+  .admin-profile > div button {
+
+    width: 100%;
+
+    margin-bottom: 10px;
+  }
+
+  .admin-profile > div button:first-of-type {
+    margin-right: 0;
+  }
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+.admin-profile,
+.admin-profile * {
+
+  max-width: 100%;
+
+  word-break: break-word;
+
+  box-sizing: border-box;
+}

@@ -1,0 +1,179 @@
+/* ===============================
+   NEWS SECTION
+================================= */
+.news {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+
+  overflow: hidden;
+}
+
+/* Title */
+.news h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  margin-bottom: 50px;
+}
+
+/* ===============================
+   GRID SYSTEM
+================================= */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* ===============================
+   CARD DESIGN
+================================= */
+.news-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover */
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--glow);
+}
+
+/* ===============================
+   IMAGE
+================================= */
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
+  display: block;
+}
+
+/* ===============================
+   CONTENT
+================================= */
+.news-card h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin: 15px 15px 8px;
+}
+
+/* Text clamp (prevents overflow) */
+.news-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(241, 245, 249, 0.85);
+
+  margin: 0 15px 15px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===============================
+   ENTRY ANIMATION
+================================= */
+.news-card {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Stagger */
+.news-card:nth-child(1) { animation-delay: 0.1s; }
+.news-card:nth-child(2) { animation-delay: 0.2s; }
+.news-card:nth-child(3) { animation-delay: 0.3s; }
+.news-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Keyframe */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .news {
+    padding: 60px 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .news {
+    padding: 50px 16px;
+  }
+
+  .news h2 {
+    font-size: 1.6rem;
+  }
+
+  .news-grid {
+    gap: 20px;
+  }
+
+  .news-card img {
+    height: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .news {
+    padding: 40px 14px;
+  }
+
+  .news h2 {
+    font-size: 1.4rem;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card img {
+    height: 160px;
+  }
+
+  .news-card h3 {
+    font-size: 1rem;
+  }
+
+  .news-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.news,
+.news-grid,
+.news-card {
+  max-width: 100%;
+}
+
+.news-card p {
+  word-break: break-word;
+}

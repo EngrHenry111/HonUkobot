@@ -1,0 +1,179 @@
+/* ===============================
+   ADMIN LEADERSHIP PAGE
+================================= */
+.admin-leadership {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+/* Title */
+.admin-leadership h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   FORM
+================================= */
+.admin-leadership input,
+.admin-leadership textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.05);
+  color: var(--text-light);
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* Focus */
+.admin-leadership input:focus,
+.admin-leadership textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Textarea */
+.admin-leadership textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit button */
+.admin-leadership > button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  margin: 10px 0 20px;
+}
+
+.admin-leadership > button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* Divider */
+.admin-leadership hr {
+  margin: 25px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===============================
+   LIST ITEMS
+================================= */
+.admin-leadership > div {
+  padding: 15px;
+  margin-bottom: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Title */
+.admin-leadership h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+/* Year */
+.admin-leadership p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================= */
+.admin-leadership > div button {
+  margin-right: 10px;
+  padding: 6px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Edit */
+.admin-leadership > div button:first-of-type {
+  background: rgba(14,165,233,0.2);
+  color: var(--primary);
+}
+
+.admin-leadership > div button:first-of-type:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--glow);
+}
+
+/* Delete */
+.admin-leadership > div button:last-of-type {
+  background: rgba(220,20,60,0.2);
+  color: crimson;
+}
+
+.admin-leadership > div button:last-of-type:hover {
+  background: crimson;
+  color: white;
+  box-shadow: 0 0 10px crimson;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  .admin-leadership {
+    padding: 30px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-leadership {
+    padding: 25px 14px;
+  }
+
+  .admin-leadership h2 {
+    font-size: 1.4rem;
+  }
+
+  .admin-leadership input,
+  .admin-leadership textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.admin-leadership,
+.admin-leadership * {
+  max-width: 100%;
+  word-break: break-word;
+}

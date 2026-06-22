@@ -1,0 +1,268 @@
+/* ==========================================
+   GALLERY SECTION
+========================================== */
+.gallery {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.gallery h2 {
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: var(--primary);
+  margin-bottom: 60px;
+}
+
+/* ==========================================
+   EVENTS GRID
+========================================== */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  );
+  gap: 25px;
+}
+
+/* ==========================================
+   EVENT CARD
+========================================== */
+.event-card {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.35s ease;
+
+  opacity: 0;
+  animation: cardFade 0.8s ease forwards;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+.event-image {
+  width: 100%;
+  aspect-ratio: 8 / 9;
+  /* object-fit: cover; */
+  display: block;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+.event-content {
+  flex: 1;
+}
+
+
+.event-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* ==========================================
+   CATEGORY BADGE
+========================================== */
+.badge {
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color: white;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  margin-bottom: 15px;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+.event-content h3 {
+  margin-bottom: 15px;
+
+  color: var(--primary);
+
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   DATE
+========================================== */
+.event-date {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 12px;
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 30px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  color: var(--primary);
+
+  margin-bottom: 12px;
+}
+
+/* ==========================================
+   LOCATION
+========================================== */
+.event-location {
+  font-weight: 600;
+  margin-bottom: 15px;
+
+  color: var(--text-light);
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+.event-description {
+  line-height: 1.8;
+  color: var(--text-light);
+
+  opacity: 0.9;
+}
+
+/* ==========================================
+   CARD ENTRY ANIMATION
+========================================== */
+@keyframes cardFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.event-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.event-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.event-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.event-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.event-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.event-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* ==========================================
+   FEATURED FIRST CARD
+========================================== */
+/* .event-card:first-child {
+  grid-column: span 2;
+}
+
+.event-card:first-child .event-image {
+  height: 420px;
+}
+
+.event-card:first-child h3 {
+  font-size: 1.6rem;
+} */
+
+/* ==========================================
+   TABLET
+========================================== */
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card:first-child {
+    grid-column: span 1;
+  }
+
+  .event-card:first-child .event-image {
+    height: 280px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+@media (max-width: 480px) {
+  .gallery {
+    padding: 50px 14px;
+  }
+
+  .gallery h2 {
+    font-size: 1.6rem;
+  }
+
+  .event-image {
+    height: 220px;
+  }
+
+  .event-content {
+    padding: 18px;
+  }
+
+  .event-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .event-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   OVERFLOW PROTECTION
+========================================== */
+.gallery,
+.gallery * {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-break: break-word;
+}

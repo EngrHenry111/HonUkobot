@@ -1,0 +1,180 @@
+/* ===============================
+   ABOUT SECTION WRAPPER
+================================= */
+.about {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(10px);
+  overflow: hidden; /* ✅ prevents overflow */
+}
+
+/* Subtle background glow */
+.about::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--primary);
+  filter: blur(120px);
+  opacity: 0.15;
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+}
+
+/* ===============================
+   CONTENT STRUCTURE
+================================= */
+.about > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   TYPOGRAPHY
+================================= */
+.about h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.about h3 {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.about p {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.8;
+  color: rgba(241, 245, 249, 0.85);
+  max-width: 600px;
+}
+
+/* ===============================
+   TEXT FLOW IMPROVEMENT
+================================= */
+.about p + p {
+  margin-top: 10px;
+}
+
+/* ===============================
+   OPTIONAL IMAGE (SAFE)
+================================= */
+.about img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+
+  border-radius: 14px;
+  object-fit: cover;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover (safe with framer motion) */
+.about img:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--glow);
+}
+
+/* ===============================
+   SECTION ANIMATION (SAFE)
+================================= */
+.about {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Animation keyframe */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 60px 20px;
+  }
+
+  .about p {
+    max-width: 100%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 16px;
+    border-radius: 14px;
+  }
+
+  .about h2 {
+    font-size: 1.6rem;
+  }
+
+  .about h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 14px;
+    gap: 25px;
+  }
+
+  .about h2 {
+    font-size: 1.4rem;
+  }
+
+  .about p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .about img {
+    max-width: 100%;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION (GLOBAL SAFETY)
+================================= */
+.about,
+.about * {
+  max-width: 100%;
+  word-wrap: break-word;
+}

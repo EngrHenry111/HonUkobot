@@ -1,0 +1,313 @@
+/* ==========================================
+   HERO SECTION
+========================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 20px 80px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1120 0%,
+      #111827 50%,
+      #172033 100%
+    );
+}
+
+/* Decorative Overlay */
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -200px;
+  right: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      rgba(212,175,55,0.15),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  bottom: -180px;
+  left: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      rgba(30,64,175,0.2),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 1100px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  gap: 50px;
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-avatar {
+  position: relative;
+}
+
+/* Executive Frame */
+.image-ring {
+  width: clamp(240px, 30vw, 360px);
+  aspect-ratio: 1;
+
+  padding: 10px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1e40af,
+      #d4af37
+    );
+
+  box-shadow:
+    0 0 20px rgba(30,64,175,0.4),
+    0 0 40px rgba(212,175,55,0.25);
+
+  animation:
+    introRotate 1.8s ease-out forwards;
+}
+
+.image-holder {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+}
+
+.image-holder img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 8px solid #0b1120;
+
+  display: block;
+}
+
+/* ==========================================
+   NAME
+========================================== */
+.hero-text h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  font-weight: 800;
+
+  color: #ffffff;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 15px rgba(212,175,55,0.2);
+}
+
+/* ==========================================
+   TYPEWRITER
+========================================== */
+.typing {
+  color: #d4af37;
+
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+
+  font-weight: 600;
+
+  margin-bottom: 25px;
+
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   BIO
+========================================== */
+.hero-text p {
+  max-width: 800px;
+
+  margin: 0 auto 30px;
+
+  color: rgba(248,250,252,0.92);
+
+  line-height: 1.9;
+
+  font-size: 1rem;
+
+  text-align: center;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+.hero-text .btn {
+  background:
+    linear-gradient(
+      135deg,
+      #1e40af,
+      #d4af37
+    );
+
+  padding: 14px 30px;
+
+  border-radius: 50px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.hero-text .btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 0 20px rgba(212,175,55,0.4);
+}
+
+/* ==========================================
+   PARTICLES
+========================================== */
+.particles {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+@keyframes introRotate {
+  from {
+    transform:
+      rotate(-360deg)
+      scale(0.7);
+
+    opacity: 0;
+  }
+
+  to {
+    transform:
+      rotate(0deg)
+      scale(1);
+
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 100px 20px 70px;
+  }
+
+  .hero-container {
+    gap: 35px;
+  }
+
+  .hero-text p {
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 90px 15px 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .typing {
+    font-size: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .image-ring {
+    width: 220px;
+  }
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+.hero,
+.hero * {
+  box-sizing: border-box;
+}
+
+.hero img {
+  max-width: 100%;
+  display: block;
+}
