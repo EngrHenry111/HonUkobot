@@ -7,7 +7,7 @@ const About = () => {
 
   useEffect(() => {
     API.get("/profile").then(res => {
-      setProfile(res.data[0]); // 🔥 get latest profile
+      setProfile(res.data.data[0]); // 🔥 get latest profile
     });
   }, []);
 
